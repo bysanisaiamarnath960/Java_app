@@ -1,25 +1,16 @@
- // HelloWorldServlet.java
-import java.io.IOException;
-import java.io.PrintWriter;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+public class Factorial {
+    // Recursive function to calculate factorial
+    public static int factorial(int n) {
+        if (n == 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
 
-public class HelloWorldServlet extends HttpServlet {
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html");
-        PrintWriter out = response.getWriter();
-        out.println("<html>");
-        out.println("<head>");
-        out.println("<title>Hello World Servlet</title>");
-        out.println("</head>");
-        out.println("<body>");
-        out.println("<h1>Hello, World!</h1>");
-        out.println("<p>This is a simple Java web application deployed on Tomcat.</p>");
-        out.println("</body>");
-        out.println("</html>");
+    public static void main(String[] args) {
+        int number = 5; // Change this to calculate factorial of a different number
+        int result = factorial(number);
+        System.out.println("Factorial of " + number + " is: " + result);
     }
 }
